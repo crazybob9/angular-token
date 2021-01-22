@@ -317,7 +317,7 @@ export class AngularTokenService implements CanActivate {
           observer.error(error);
           observer.complete();
         });
-      })
+      });
     } else if (oAuthWindowType === 'sameWindow') {
       this.global.location.href = authUrl;
       return undefined;
@@ -399,8 +399,6 @@ export class AngularTokenService implements CanActivate {
 
   // Reset password request
   resetPassword(resetPasswordData: ResetPasswordData, additionalData?: any): Observable<ApiResponse> {
-    
-    
     if (additionalData !== undefined) {
       resetPasswordData.additionalData = additionalData;
     }
